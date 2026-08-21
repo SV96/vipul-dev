@@ -3,8 +3,8 @@
 A modern, high-performance portfolio website built with **React 19**, **Vite**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 
 ## 🚀 Live Demo & Deployment
-- **GitHub Pages:** [https://sv96.github.io/Portfoli/](https://sv96.github.io/Portfoli/)
-- **Repository:** [https://github.com/SV96/Portfoli](https://github.com/SV96/Portfoli)
+- **GitHub Pages:** [https://sv96.github.io/vipul-dev/](https://sv96.github.io/vipul-dev/)
+- **Repository:** [https://github.com/SV96/vipul-dev](https://github.com/SV96/vipul-dev)
 
 ## 🛠️ Tech Stack
 - **Framework & Build Tool:** React 19, Vite
@@ -21,8 +21,8 @@ A modern, high-performance portfolio website built with **React 19**, **Vite**, 
 ### Getting Started
 ```bash
 # Clone the repository
-git clone git@github.com:SV96/Portfoli.git
-cd Portfoli
+git clone git@github.com:SV96/vipul-dev.git
+cd vipul-dev
 
 # Install dependencies
 npm install
