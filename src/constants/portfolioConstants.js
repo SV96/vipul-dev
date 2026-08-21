@@ -93,7 +93,7 @@ export const UI_STRINGS = {
   dayModeLabel: "Day Mode",
   nightModeLabel: "Night Mode",
   paletteTitle: "Color Palette",
-  resumeFileName: "Shah_Vipul_Resume.pdf",
+  resumeFileName: "Vipul_s_MERN.pdf",
   downloadResumeText: "Resume",
   downloadResumeFull: "Download Resume PDF",
   downloadCVText: "Download CV",
@@ -278,7 +278,7 @@ export const PERSONAL_DATA = {
   phone: "+91 7984498833",
   location: "Ahmedabad, Gujarat, India",
   availableForHire: true,
-  resumeLink: "./Shah_Vipul_Resume.pdf",
+  resumeLink: "./Vipul_s_MERN.pdf",
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
