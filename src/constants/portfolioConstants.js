@@ -10,7 +10,7 @@ export const SECTION_FLAGS = {
   hero: true,
   about: true,            // Master flag for About section
   aboutProfile: true,     // Sub-flag: Bio & 4 Core Pillars (Left Column)
-  aboutTerminal: true,    // Sub-flag: Interactive CrewAI Agent Terminal (Right Column)
+  aboutTerminal: false,   // Sub-flag: Interactive CrewAI Agent Terminal (Right Column)
   skills: true,
   projects: true,
   aiAssistant: true,
