@@ -1,16 +1,45 @@
-# React + Vite
+# Shah Vipul - Senior Full-Stack & GenAI Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, high-performance portfolio website built with **React 19**, **Vite**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo & Deployment
+- **GitHub Pages:** [https://sv96.github.io/Portfoli/](https://sv96.github.io/Portfoli/)
+- **Repository:** [https://github.com/SV96/Portfoli](https://github.com/SV96/Portfoli)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
+- **Framework & Build Tool:** React 19, Vite
+- **Styling & UI:** Tailwind CSS v4, Framer Motion, Lucide Icons
+- **Interactive Features:** Dynamic Theme Switcher (Dark/Light/Cyberpunk), Canvas Confetti, EmailJS Contact Form
+- **Hosting & CI/CD:** GitHub Pages via GitHub Actions
 
-## React Compiler
+## 📦 Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js >= 18 (Recommended: Node 20 or 22)
+- npm >= 9
 
-## Expanding the Oxlint configuration
+### Getting Started
+```bash
+# Clone the repository
+git clone git@github.com:SV96/Portfoli.git
+cd Portfoli
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🌐 GitHub Pages Setup
+This repository uses **GitHub Actions** for automatic deployment to GitHub Pages.
+
+1. Go to repository **Settings** > **Pages**.
+2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+3. Every push to the `main` branch will automatically trigger the deployment workflow located in `.github/workflows/deploy.yml`.

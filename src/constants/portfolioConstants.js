@@ -278,7 +278,7 @@ export const PERSONAL_DATA = {
   phone: "+91 7984498833",
   location: "Ahmedabad, Gujarat, India",
   availableForHire: true,
-  resumeLink: "/Shah_Vipul_Resume.pdf",
+  resumeLink: "./Shah_Vipul_Resume.pdf",
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
