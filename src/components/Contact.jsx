@@ -78,11 +78,12 @@ export default function Contact() {
     <section id="contact" className="py-24 theme-bg-primary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs uppercase tracking-widest theme-accent-color font-mono mb-3">
-            {UI_STRINGS.contact.eyebrow}
-          </h2>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full theme-accent-soft-bg theme-accent-color text-xs font-mono mb-3">
+            <Mail className="w-3.5 h-3.5" />
+            <span>{UI_STRINGS.contact.eyebrow}</span>
+          </div>
           <h3 className="text-3xl sm:text-4xl font-extrabold theme-text-heading tracking-tight">
             {UI_STRINGS.contact.headingPrefix}
             <span className="gradient-text">{UI_STRINGS.contact.headingGradient}</span>
@@ -92,23 +93,23 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-start">
           
-          {/* Direct Details */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Direct Details Sidebar */}
+          <div className="lg:col-span-5 space-y-4">
             
             {/* Email */}
-            <div className="p-6 rounded-2xl glass-panel group">
+            <div className="p-5 rounded-xl glass-panel group transition-all hover:border-slate-400 dark:hover:border-slate-700">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color group-hover:scale-110 transition-transform">
-                    <Mail className="w-6 h-6" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-lg theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color shrink-0">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono uppercase theme-text-muted">
+                    <span className="text-[10px] font-mono uppercase theme-text-muted tracking-wider">
                       {UI_STRINGS.contact.directEmailLabel}
                     </span>
-                    <h4 className="font-bold theme-text-heading text-base">
+                    <h4 className="font-bold theme-text-heading text-sm sm:text-base">
                       {PERSONAL_DATA.email}
                     </h4>
                   </div>
@@ -116,8 +117,9 @@ export default function Contact() {
 
                 <button
                   onClick={() => copyToClipboard(PERSONAL_DATA.email, 'email')}
-                  className="p-2.5 rounded-xl glass-panel theme-text-muted hover:theme-accent-color transition-colors"
+                  className="p-2 rounded-lg glass-panel theme-text-muted hover:theme-accent-color transition-colors"
                   title="Copy Email"
+                  aria-label="Copy Email to clipboard"
                 >
                   {copiedField === 'email' ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
@@ -125,17 +127,17 @@ export default function Contact() {
             </div>
 
             {/* Phone */}
-            <div className="p-6 rounded-2xl glass-panel group">
+            <div className="p-5 rounded-xl glass-panel group transition-all hover:border-slate-400 dark:hover:border-slate-700">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color group-hover:scale-110 transition-transform">
-                    <Phone className="w-6 h-6" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-lg theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color shrink-0">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono uppercase theme-text-muted">
+                    <span className="text-[10px] font-mono uppercase theme-text-muted tracking-wider">
                       {UI_STRINGS.contact.phoneLabel}
                     </span>
-                    <h4 className="font-bold theme-text-heading text-base">
+                    <h4 className="font-bold theme-text-heading text-sm sm:text-base">
                       {PERSONAL_DATA.phone}
                     </h4>
                   </div>
@@ -143,8 +145,9 @@ export default function Contact() {
 
                 <button
                   onClick={() => copyToClipboard(PERSONAL_DATA.phone, 'phone')}
-                  className="p-2.5 rounded-xl glass-panel theme-text-muted hover:theme-accent-color transition-colors"
+                  className="p-2 rounded-lg glass-panel theme-text-muted hover:theme-accent-color transition-colors"
                   title="Copy Phone"
+                  aria-label="Copy Phone number to clipboard"
                 >
                   {copiedField === 'phone' ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
@@ -152,16 +155,16 @@ export default function Contact() {
             </div>
 
             {/* Location */}
-            <div className="p-6 rounded-2xl glass-panel group">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color group-hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6" />
+            <div className="p-5 rounded-xl glass-panel group transition-all hover:border-slate-400 dark:hover:border-slate-700">
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-lg theme-accent-soft-bg border theme-accent-soft-border flex items-center justify-center theme-accent-color shrink-0">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono uppercase theme-text-muted">
+                  <span className="text-[10px] font-mono uppercase theme-text-muted tracking-wider">
                     {UI_STRINGS.contact.locationLabel}
                   </span>
-                  <h4 className="font-bold theme-text-heading text-base">
+                  <h4 className="font-bold theme-text-heading text-sm sm:text-base">
                     {PERSONAL_DATA.location}
                   </h4>
                 </div>
@@ -169,15 +172,15 @@ export default function Contact() {
             </div>
 
             {/* Resume Download */}
-            <div className="p-6 rounded-2xl glass-panel theme-accent-soft-border">
+            <div className="p-5 rounded-xl glass-panel theme-accent-soft-border shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <FileText className="w-6 h-6 theme-accent-color" />
+                  <FileText className="w-5 h-5 theme-accent-color shrink-0" />
                   <div>
-                    <h4 className="font-bold theme-text-heading text-sm">
+                    <h4 className="font-bold theme-text-heading text-xs sm:text-sm">
                       {UI_STRINGS.contact.downloadCardTitle}
                     </h4>
-                    <p className="text-xs theme-text-muted">
+                    <p className="text-[11px] theme-text-muted font-mono">
                       {UI_STRINGS.contact.downloadCardSubtitle}
                     </p>
                   </div>
@@ -185,7 +188,7 @@ export default function Contact() {
                 <a
                   href={PERSONAL_DATA.resumeLink}
                   download={UI_STRINGS.resumeFileName}
-                  className="btn-accent px-4 py-2 rounded-xl font-bold text-xs shadow-md"
+                  className="btn-accent px-3.5 py-1.5 rounded-lg font-bold text-xs shadow-sm whitespace-nowrap"
                 >
                   {UI_STRINGS.contact.downloadBtn}
                 </a>
@@ -196,9 +199,9 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl glass-panel shadow-2xl">
-              <h4 className="text-xl font-bold theme-text-heading mb-6 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 theme-accent-color" />
+            <div className="p-6 sm:p-7 rounded-xl glass-panel shadow-xl border theme-border">
+              <h4 className="text-base sm:text-lg font-bold theme-text-heading mb-5 flex items-center gap-2">
+                <Send className="w-4 h-4 theme-accent-color" />
                 <span>{UI_STRINGS.contact.formTitle}</span>
               </h4>
 

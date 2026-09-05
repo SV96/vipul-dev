@@ -16,9 +16,17 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen theme-bg-primary theme-text-main selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300">
+      {/* Accessible Skip to Main Content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:rounded-xl btn-accent focus:shadow-2xl text-xs font-semibold"
+      >
+        Skip to main content
+      </a>
+
+      <div className="min-h-screen theme-bg-primary theme-text-main transition-colors duration-300">
         <Navbar />
-        <main>
+        <main id="main-content">
           {SECTION_FLAGS.hero && <Hero />}
           {SECTION_FLAGS.about && <About />}
           {SECTION_FLAGS.skills && <Skills />}

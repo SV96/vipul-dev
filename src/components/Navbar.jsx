@@ -23,17 +23,26 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3 shadow-xl' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 py-3.5 transition-all duration-300 ${scrolled ? 'glass-nav shadow-xl' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group">
+          <a href="#" className="flex items-center gap-3 shrink-0 group" aria-label={`${PERSONAL_DATA.name} - Home`}>
             <div className="w-10 h-10 rounded-xl theme-accent-bg p-[2px] shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
               <div className="w-full h-full theme-bg-primary rounded-[10px] flex items-center justify-center font-bold theme-accent-color text-sm tracking-wider">
                 {UI_STRINGS.brandInitials}
@@ -52,7 +61,7 @@ export default function Navbar() {
 
           {/* Center Navigation links */}
           {navItems.length > 0 && (
-            <nav className="hidden lg:flex items-center gap-1 glass-panel px-3 py-1.5 rounded-full">
+            <nav className="hidden lg:flex items-center gap-1 glass-panel px-3 py-1.5 rounded-full" aria-label="Main Navigation">
               {navItems.map((item) => (
                 <a
                   key={item.key}
@@ -88,6 +97,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-xl glass-panel text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                 aria-label="Toggle menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-nav-menu"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -99,7 +110,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && navItems.length > 0 && (
-        <div className="lg:hidden glass-nav border-b px-4 pt-3 pb-6 mt-3 space-y-2 animate-in slide-in-from-top-5 duration-200">
+        <div id="mobile-nav-menu" className="lg:hidden glass-nav border-b px-4 pt-3 pb-6 mt-3 space-y-2 animate-in slide-in-from-top-5 duration-200" aria-label="Mobile Navigation">
           {navItems.map((item) => (
             <a
               key={item.key}

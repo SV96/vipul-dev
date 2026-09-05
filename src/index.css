@@ -101,6 +101,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: var(--accent-primary);
+  color: #020617;
+}
+
 /* Dynamic Classes */
 .theme-bg-primary {
   background-color: var(--bg-primary);

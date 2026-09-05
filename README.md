@@ -1,4 +1,4 @@
-# Shah Vipul - Senior Full-Stack & GenAI Developer Portfolio
+  # Shah Vipul - Senior Full-Stack & GenAI Developer Portfolio
 
 A modern, high-performance portfolio website built with **React 19**, **Vite**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 

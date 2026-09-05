@@ -46,6 +46,7 @@ export default function Footer() {
           {/* Back to top */}
           <button
             onClick={scrollToTop}
+            aria-label="Back to top"
             className="flex items-center gap-2 px-4 py-2 rounded-xl glass-panel theme-text-main hover:theme-accent-color transition-all"
           >
             <span>{UI_STRINGS.footer.backToTop}</span>
