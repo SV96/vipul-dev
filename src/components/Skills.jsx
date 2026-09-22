@@ -44,7 +44,7 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState("GenAI & AI Agents");
 
   return (
-    <section id="skills" className="py-24 theme-bg-primary relative">
+    <section id="skills" className="py-24 theme-bg-secondary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

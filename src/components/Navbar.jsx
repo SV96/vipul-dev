@@ -76,6 +76,13 @@ export default function Navbar() {
 
           {/* Right Actions */}
           <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-command-palette'))}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl glass-panel theme-text-muted hover:theme-text-heading text-xs font-mono transition-all"
+              aria-label="Open command palette"
+            >
+              ⌘K
+            </button>
             <ThemeControls />
             
             <a
@@ -90,6 +97,13 @@ export default function Navbar() {
 
           {/* Mobile Navigation controls */}
           <div className="lg:hidden flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-command-palette'))}
+              className="p-2 rounded-xl glass-panel theme-text-muted text-xs font-mono"
+              aria-label="Open command palette"
+            >
+              ⌘K
+            </button>
             <ThemeControls />
 
             {navItems.length > 0 && (

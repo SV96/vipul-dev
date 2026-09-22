@@ -15,7 +15,7 @@ export default function Projects() {
     : PROJECTS_DATA.filter(p => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24 theme-bg-secondary relative">
+    <section id="projects" className="py-24 theme-bg-primary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

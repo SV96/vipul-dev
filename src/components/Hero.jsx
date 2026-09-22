@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Terminal, FileText, CheckCircle2, Code2, Cpu, Database, Server, Sparkles } from 'lucide-react';
-import { UI_STRINGS, PERSONAL_DATA, STATS_DATA, TECH_BADGES } from '../constants/portfolioConstants';
+import { ArrowRight, Terminal, FileText } from 'lucide-react';
+import { UI_STRINGS, PERSONAL_DATA, STATS_DATA, HERO_FEATURED, HERO_SPLIT } from '../constants/portfolioConstants';
 
 const engineeringFocusList = [
   "Senior Full-Stack & GenAI Architect",
@@ -134,6 +134,26 @@ export default function Hero() {
             {UI_STRINGS.hero.introSuffix}
           </motion.p>
 
+          {/* "Built at" Credibility Strip */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-10"
+          >
+            <p className="text-[11px] uppercase tracking-widest theme-text-dim font-mono">
+              {UI_STRINGS.hero.featuredLabel}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {HERO_FEATURED.map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 rounded-lg glass-panel theme-accent-soft-border text-xs font-mono theme-text-heading"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
           {/* High-Contrast Action Group */}
           <motion.div 
             variants={itemVariants}
@@ -171,32 +191,6 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          {/* Core Technology Stack Matrix */}
-          <motion.div 
-            variants={itemVariants}
-            className="w-full max-w-4xl mb-14"
-          >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="h-px w-8 bg-slate-300 dark:bg-slate-800"></span>
-              <p className="text-[11px] uppercase tracking-widest theme-text-muted font-mono">
-                {UI_STRINGS.hero.matrixTitle}
-              </p>
-              <span className="h-px w-8 bg-slate-300 dark:bg-slate-800"></span>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {TECH_BADGES.map((badge, idx) => (
-                <motion.span
-                  key={idx}
-                  whileHover={{ y: -2, scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                  className="px-3 py-1 rounded-lg glass-panel text-xs font-mono theme-text-main hover:theme-accent-color hover:border-slate-400 dark:hover:border-slate-700 transition-colors cursor-default"
-                >
-                  {badge}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Telemetry Impact Metrics */}
           <motion.div 
             variants={itemVariants}
@@ -220,6 +214,37 @@ export default function Hero() {
           </motion.div>
 
         </motion.div>
+
+        {/* Two-Path Split — full-stack vs ai builder */}
+        <div className="max-w-5xl mx-auto mt-14 md:mt-16">
+          <p className="text-center text-[11px] uppercase tracking-widest theme-text-dim font-mono mb-5">
+            {UI_STRINGS.hero.splitTitle}
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {HERO_SPLIT.map((card, idx) => (
+              <motion.a
+                key={card.kicker}
+                href={card.href}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55 + idx * 0.12, duration: 0.5, ease: 'easeOut' }}
+                whileHover={{ y: -4 }}
+                className="glass-panel rounded-2xl p-6 sm:p-7 block group hover:theme-accent-soft-border transition-all"
+              >
+                <p className="font-mono text-xs theme-accent-color mb-3">{card.kicker}</p>
+                <h3 className="text-lg sm:text-xl font-bold theme-text-heading tracking-tight mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-sm theme-text-muted leading-relaxed mb-4">
+                  {card.desc}
+                </p>
+                <span className="font-mono text-xs theme-accent-color group-hover:underline underline-offset-4">
+                  {card.linkText}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

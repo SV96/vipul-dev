@@ -3,15 +3,18 @@ import { ThemeProvider } from './context/ThemeContext';
 import { SECTION_FLAGS } from './constants/portfolioConstants';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TechWall from './components/TechWall';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import CaseStudy from './components/CaseStudy';
 import AiShowcase from './components/AiShowcase';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CommandPalette from './components/CommandPalette';
 
 export default function App() {
   return (
@@ -28,9 +31,11 @@ export default function App() {
         <Navbar />
         <main id="main-content">
           {SECTION_FLAGS.hero && <Hero />}
+          {SECTION_FLAGS.techWall && <TechWall />}
           {SECTION_FLAGS.about && <About />}
           {SECTION_FLAGS.skills && <Skills />}
           {SECTION_FLAGS.projects && <Projects />}
+          {SECTION_FLAGS.caseStudy && <CaseStudy />}
           {SECTION_FLAGS.aiAssistant && <AiShowcase />}
           {SECTION_FLAGS.experience && <Experience />}
           {SECTION_FLAGS.achievements && <Achievements />}
@@ -38,6 +43,7 @@ export default function App() {
           {SECTION_FLAGS.contact && <Contact />}
         </main>
         <Footer />
+        <CommandPalette />
       </div>
     </ThemeProvider>
   );

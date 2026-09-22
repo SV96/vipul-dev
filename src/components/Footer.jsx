@@ -57,9 +57,15 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 theme-text-muted text-[11px]">
           <p>© {new Date().getFullYear()} {UI_STRINGS.footer.rightsReserved}</p>
-          <p className="flex items-center gap-1">
-            {UI_STRINGS.footer.builtWith}
-            <span className="theme-accent-color font-semibold">{UI_STRINGS.footer.techStackName}</span>
+          <p className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5">
+              <kbd className="border theme-border rounded px-1.5 py-0.5 text-[10px]">⌘K</kbd>
+              to navigate
+            </span>
+            <span className="flex items-center gap-1">
+              {UI_STRINGS.footer.builtWith}
+              <span className="theme-accent-color font-semibold">{UI_STRINGS.footer.techStackName}</span>
+            </span>
           </p>
         </div>
       </div>

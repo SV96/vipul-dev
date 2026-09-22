@@ -8,11 +8,13 @@ export const EMAILJS_CONFIG = {
 
 export const SECTION_FLAGS = {
   hero: true,
+  techWall: true,         // Scrolling tech toolbelt marquee
   about: true,            // Master flag for About section
   aboutProfile: true,     // Sub-flag: Bio & 4 Core Pillars (Left Column)
   aboutTerminal: false,   // Sub-flag: Interactive CrewAI Agent Terminal (Right Column)
   skills: true,
   projects: true,
+  caseStudy: true,        // Chat-style case study + working principles
   aiAssistant: true,
   experience: true,
   achievements: true,
@@ -125,7 +127,28 @@ export const UI_STRINGS = {
     introSuffix: ".",
     btnProjects: "Explore Featured Projects",
     btnContact: "Get In Touch",
-    matrixTitle: "Core Technology Matrix"
+    matrixTitle: "Core Technology Matrix",
+    featuredLabel: "Currently engineering at",
+    splitTitle: "Two ways I can help"
+  },
+
+  techWall: {
+    kicker: "// stack",
+    title: "The toolbelt",
+    sub: "What I actually reach for in production — hover to pause."
+  },
+
+  caseStudy: {
+    kicker: "// case study",
+    titlePrefix: "First, we need a ",
+    titleGradient: "problem…",
+    principlesKicker: "// principles",
+    principlesTitlePrefix: "Then, how I'd ",
+    principlesTitleGradient: "work…",
+    hmLabel: "Hiring Manager",
+    meLabel: "Shah Vipul",
+    terminalTitle: "crewai — brd pipeline",
+    terminalCaption: "A BRD goes in; a build-tested PR draft comes out. An engineer approves every merge — the agents never touch main directly."
   },
 
   about: {
@@ -298,6 +321,98 @@ export const TECH_BADGES = [
   'React.js', 'Next.js', 'Node.js', 'Python', 'Django', 'Flask', 
   'CrewAI', 'LangChain', 'OpenAI GPT-4o', 'PostgreSQL', 'MongoDB', 
   'Docker', 'AWS EC2/S3', 'Tailwind CSS', 'Redux', 'GraphQL'
+];
+
+// "Built at" credibility strip under the hero headline
+export const HERO_FEATURED = [
+  'Digiqt Technolabs',
+  '6+ yrs · InsurTech',
+  'MERN + Python',
+  'GenAI · CrewAI'
+];
+
+// Two-path split cards bridging hero → work
+export const HERO_SPLIT = [
+  {
+    kicker: 'full-stack',
+    title: 'InsurTech-grade web platforms',
+    desc: 'React, Node.js & Python systems tuned for quote engines, high concurrency and InfoSec compliance.',
+    linkText: 'see the projects →',
+    href: '#projects'
+  },
+  {
+    kicker: '<ai builder>',
+    title: 'GenAI that ships to production',
+    desc: 'CrewAI agents, RAG pipelines and NL-to-SQL tools — grounded, permission-scoped, measured.',
+    linkText: 'see the AI work →',
+    href: '#ai-assistant'
+  }
+];
+
+// Scrolling toolbelt — two rows, second row runs in reverse
+export const TECH_WALL_TILES = [
+  'React.js', 'Next.js', 'Node.js', 'Python', 'Django', 'Flask',
+  'PostgreSQL', 'MongoDB', 'Redis', 'GraphQL', 'Redux', 'Tailwind CSS',
+  'CrewAI', 'LangChain', 'OpenAI GPT-4o', 'Ollama', 'ChromaDB', 'Vanna AI',
+  'Docker', 'Kubernetes', 'AWS EC2/S3', 'Nginx', 'CI/CD', 'Linux'
+];
+
+// Scripted hiring-manager conversation for the case-study section
+export const CASE_STUDY_SCRIPT = [
+  {
+    from: 'hm',
+    text: "We run an insurance platform. Quotes take days to turn around, and our developers spend half their week translating BRD documents into boilerplate code. Where do you even start?"
+  },
+  {
+    from: 'me',
+    text: "Two bottlenecks, one habit: measure first, then automate. For quoting, the win was moving computation closer to the user — a custom rating engine with Web Workers crunching vendor data in the background instead of blocking the main thread. Quote turnaround dropped by ~60%."
+  },
+  {
+    from: 'hm',
+    text: "And the BRD-to-code problem?"
+  },
+  {
+    from: 'me',
+    text: "A CrewAI pipeline with specialised agents — analyser, module creator, code writer, and a reviewer that validates against real templates. The BRD goes in; a build-tested draft comes out. Engineers approve every merge.",
+    embed: 'terminal'
+  },
+  {
+    from: 'hm',
+    text: "How do you keep something like that reliable?"
+  },
+  {
+    from: 'me',
+    text: "Same discipline as any distributed system: idempotent steps, retries, structured logs, and a human approving anything that mutates state. If an agent run fails halfway, it resumes — it doesn't restart from zero."
+  },
+  {
+    from: 'hm',
+    text: "What does 'done' look like to you?"
+  },
+  {
+    from: 'me',
+    text: "Dashboards, not vibes. p95 latency, quote accuracy, agent acceptance rate — measured before and after, so we know the change actually worked. The 95% SLA resolution and +20% uptime numbers came from exactly that loop."
+  },
+  {
+    from: 'hm',
+    text: "When can you start?"
+  }
+];
+
+// Fake terminal output embedded inside the case-study chat
+export const CASE_STUDY_TERMINAL = [
+  { text: "$ crewai run --brd motor-policy-brd.pdf", color: "text-slate-400" },
+  { text: "▶ brd-analyser    extracting requirements… 14 stories, 6 modules", color: "text-cyan-400" },
+  { text: "▶ module-creator  decomposing → 23 token-safe tasks", color: "text-cyan-400" },
+  { text: "▶ code-writer     generating React UI + Node.js endpoints (412 lines)", color: "text-indigo-400" },
+  { text: "▶ reviewer        ✓ build passed · ✓ tests green · ✓ lint clean", color: "text-emerald-400" },
+  { text: "✓ PR #217 drafted — awaiting engineer approval", color: "text-emerald-300 font-semibold" }
+];
+
+export const WORK_PRINCIPLES = [
+  { title: "Reliability first", desc: "Retries, idempotency and observability before features." },
+  { title: "Automate the boring parts", desc: "If it's manual twice, it becomes a script — or an agent." },
+  { title: "Measure, then optimise", desc: "p95s and dashboards, not guesses." },
+  { title: "Human in the loop", desc: "AI drafts, engineers decide. Always." }
 ];
 
 export const TERMINAL_STEPS = [
