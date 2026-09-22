@@ -6,7 +6,7 @@ import {
   Copy, ExternalLink
 } from 'lucide-react';
 import { SECTION_FLAGS, PERSONAL_DATA, UI_STRINGS } from '../constants/portfolioConstants';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/theme-context';
 
 const SECTION_ITEMS = [
   { flagKey: 'about', id: 'about', label: 'About', icon: User },

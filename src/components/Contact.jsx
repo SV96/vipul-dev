@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UI_STRINGS, PERSONAL_DATA, EMAILJS_CONFIG } from '../constants/portfolioConstants';
-import { Mail, Phone, MapPin, Send, Copy, Check, Sparkles, FileText, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Copy, Check, FileText, AlertCircle, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import emailjs from '@emailjs/browser';
 
@@ -206,7 +206,7 @@ export default function Contact() {
               </h4>
 
               {formSubmitted ? (
-                <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
+                <div className="py-12 text-center space-y-4 anim-fade">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-500 flex items-center justify-center mx-auto text-2xl font-bold">
                     ✓
                   </div>

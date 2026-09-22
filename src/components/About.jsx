@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Terminal, ShieldCheck, Zap, Bot, Code, Cpu, Play, CheckCircle2, RefreshCw } from 'lucide-react';
+import { Terminal, Code, Play, CheckCircle2, RefreshCw } from 'lucide-react';
 import { UI_STRINGS, TERMINAL_STEPS, SECTION_FLAGS } from '../constants/portfolioConstants';
-
-const pillarIcons = [Zap, Bot, ShieldCheck, Cpu];
 
 export default function About() {
   const [activeStep, setActiveStep] = useState(TERMINAL_STEPS.length);
@@ -78,25 +76,28 @@ export default function About() {
                 </p>
               </div>
 
-              {/* Pillars Grid */}
+              {/* Pillars Grid — numbered expertise cells + sweet-spot quote */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {UI_STRINGS.about.pillars.map((pillar, idx) => {
-                  const Icon = pillarIcons[idx % pillarIcons.length];
-                  return (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-xl glass-panel transition-all hover:border-slate-400 dark:hover:border-slate-700"
-                    >
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg theme-accent-soft-bg flex items-center justify-center theme-accent-color shrink-0">
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
-                        <h5 className="font-bold theme-text-heading text-xs sm:text-sm">{pillar.title}</h5>
-                      </div>
-                      <p className="text-xs theme-text-muted leading-relaxed">{pillar.desc}</p>
-                    </div>
-                  );
-                })}
+                {UI_STRINGS.about.pillars.map((pillar, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl glass-panel transition-all hover:theme-accent-soft-border"
+                  >
+                    <p className="font-mono text-xs theme-accent-color mb-2.5">
+                      {String(idx + 1).padStart(2, '0')}
+                    </p>
+                    <h5 className="font-bold theme-text-heading text-xs sm:text-sm mb-1.5 underline decoration-1 underline-offset-4 decoration-slate-500/40">{pillar.title}</h5>
+                    <p className="text-xs theme-text-muted leading-relaxed">{pillar.desc}</p>
+                  </div>
+                ))}
+
+                {/* Sweet-spot quote cell */}
+                <div className="sm:col-span-2 p-5 rounded-xl glass-panel theme-accent-soft-border">
+                  <p className="font-mono text-xs theme-accent-color mb-2">// sweet spot</p>
+                  <p className="theme-text-heading text-sm sm:text-base font-medium leading-relaxed">
+                    {UI_STRINGS.about.sweetSpot}
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -135,7 +136,7 @@ export default function About() {
                   </div>
 
                   {TERMINAL_STEPS.slice(0, activeStep).map((step, idx) => (
-                    <div key={idx} className={`leading-relaxed ${step.color} animate-in fade-in duration-150`}>
+                    <div key={idx} className={`leading-relaxed ${step.color} anim-fade`}>
                       {step.text}
                     </div>
                   ))}

@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { COLOR_PALETTES } from '../constants/portfolioConstants';
-
-const ThemeContext = createContext();
+import { ThemeContext } from './theme-context';
 
 export function ThemeProvider({ children }) {
   const [mode, setMode] = useState(() => {
@@ -42,12 +41,4 @@ export function ThemeProvider({ children }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
 }

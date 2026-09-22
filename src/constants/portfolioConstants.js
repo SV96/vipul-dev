@@ -181,6 +181,7 @@ export const UI_STRINGS = {
         desc: "AWS (EC2, S3), Docker container clustering, Nginx, and Kubernetes."
       }
     ],
+    sweetSpot: "My sweet spot is the layer between “it works in a demo” and “it runs in production.”",
     terminalTitle: "crewai_brd_agent_runner.py",
     terminalRunBtn: "Run Live Agent Sim",
     terminalRunningBtn: "Running Agent...",

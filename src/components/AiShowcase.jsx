@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bot, Send, User, Terminal, RefreshCw, MessageSquare, Check, Copy, Sparkles, Database } from 'lucide-react';
+import { Bot, Send, User, RefreshCw, MessageSquare, Check, Copy, Database } from 'lucide-react';
 import { UI_STRINGS, AI_ASSISTANT_QUESTIONS } from '../constants/portfolioConstants';
 
 export default function AiShowcase() {

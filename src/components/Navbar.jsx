@@ -124,7 +124,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && navItems.length > 0 && (
-        <div id="mobile-nav-menu" className="lg:hidden glass-nav border-b px-4 pt-3 pb-6 mt-3 space-y-2 animate-in slide-in-from-top-5 duration-200" aria-label="Mobile Navigation">
+        <div id="mobile-nav-menu" className="lg:hidden glass-nav border-b px-4 pt-3 pb-6 mt-3 space-y-2 anim-drop" aria-label="Mobile Navigation">
           {navItems.map((item) => (
             <a
               key={item.key}

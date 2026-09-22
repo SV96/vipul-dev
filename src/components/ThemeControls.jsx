@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Sun, Moon, Palette, Check } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/theme-context';
 import { UI_STRINGS } from '../constants/portfolioConstants';
 
 export default function ThemeControls() {
@@ -49,7 +49,7 @@ export default function ThemeControls() {
 
         {/* Dropdown Menu */}
         {showPaletteMenu && (
-          <div className="absolute right-0 mt-2 w-48 rounded-2xl glass-panel border shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute right-0 mt-2 w-48 rounded-2xl glass-panel border shadow-2xl p-2 z-50 anim-drop">
             <div className="text-[11px] font-mono uppercase theme-text-muted px-3 py-1.5 border-b border-slate-200 dark:border-slate-800">
               {UI_STRINGS.paletteTitle}
             </div>

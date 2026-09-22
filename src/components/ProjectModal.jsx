@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Calendar, Tag, CheckCircle2, ArrowUpRight, Cpu } from 'lucide-react';
+import { X, Calendar, Tag, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { UI_STRINGS } from '../constants/portfolioConstants';
 
 export default function ProjectModal({ project, onClose }) {
@@ -16,7 +16,7 @@ export default function ProjectModal({ project, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm anim-fade"
       onClick={onClose}
       role="dialog"
       aria-modal="true"

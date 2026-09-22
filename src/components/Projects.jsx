@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UI_STRINGS, PROJECTS_DATA } from '../constants/portfolioConstants';
 import ProjectModal from './ProjectModal';
-import { ArrowRight, FolderGit2, Star, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowRight, FolderGit2, Star } from 'lucide-react';
 
 const categories = ["All", "GenAI / AI Agents", "Full Stack & InsurTech", "Automation & Workflows"];
 
